@@ -175,7 +175,7 @@ crost.ma.opt <- function(data,type=c("croston","sba","sbj"),
     }
   }
   
-  wopt <- as.numeric(which(err==min(err,na.rm=TRUE),arr.ind=TRUE))
+  wopt <- as.numeric(which(err==min(err,na.rm=TRUE),arr.ind=TRUE)[1,])
   
   if (nop==1){
     wopt <- wopt[1]
