@@ -69,7 +69,7 @@ crost <- function(data,h=10,w=NULL,init=c("mean","naive"),nop=c(2,1),
   if (!is.numeric(init)){
     init <- init[1]
   } else {
-    if (length(init>=2)){
+    if (length(init)>=2){
       init <- init[1:2]
     } else {
       init <- "mean"

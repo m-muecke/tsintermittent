@@ -55,7 +55,7 @@ tsb <- function(data,h=10,w=NULL,init=c("mean","naive"),
   if (!is.numeric(init)){
     init <- init[1]
   } else {
-    if (length(init>=2)){
+    if (length(init)>=2){
       init <- init[1:2]
     } else {
       init <- "mean"
