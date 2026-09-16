@@ -148,16 +148,16 @@ imapa <- function(data,h=10,w=NULL,minimumAL=1,maximumAL=NULL,comb=c("mean","med
   if (sum(ychar[6,])>1){ 
     # If multiple aggregation levels are used
     if (comb=="median"){ # median
-      frc.in <- apply(f.in[ychar[6,]==1,],2,"median")
-      frc.out <- apply(f.out[ychar[6,]==1,],2,"median")
+      frc.in <- apply(f.in[ychar[6,]==1,,drop=FALSE],2,"median")
+      frc.out <- apply(f.out[ychar[6,]==1,,drop=FALSE],2,"median")
     } else { # mean
-      frc.in <- colMeans(f.in[ychar[6,]==1,])
-      frc.out <- colMeans(f.out[ychar[6,]==1,])
+      frc.in <- colMeans(f.in[ychar[6,]==1,,drop=FALSE])
+      frc.out <- colMeans(f.out[ychar[6,]==1,,drop=FALSE])
     }
   } else {
     # Single aggregation level
-    frc.in <- f.in # f.in[ychar[6,]==1,]
-    frc.out <- f.out # f.out[ychar[6,]==1,]
+    frc.in <- f.in[ychar[6,]==1,]
+    frc.out <- f.out[ychar[6,]==1,]
   }
   
   # Produce plots
